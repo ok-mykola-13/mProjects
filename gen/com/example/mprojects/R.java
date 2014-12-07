@@ -988,6 +988,9 @@ containing a value of this type.
          (the screen is in portrait). This may be either a fraction or a dimension.
          */
         public static final int dialog_fixed_width_minor=0x7f080012;
+        /**  Main Activity 
+         */
+        public static final int main_btns_padding=0x7f080017;
     }
     public static final class drawable {
         public static final int abc_ab_bottom_solid_dark_holo=0x7f020000;
@@ -1077,7 +1080,12 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int btn_projects=0x7f020057;
+        public static final int btn_todos=0x7f020058;
+        public static final int ic_launcher=0x7f020059;
+        public static final int icon_a=0x7f02005a;
+        public static final int icon_help=0x7f02005b;
+        public static final int main_bg=0x7f02005c;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1094,6 +1102,8 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
+        public static final int btn_projects=0x7f05003c;
+        public static final int btn_todos=0x7f05003d;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int default_activity_button=0x7f050028;
@@ -1235,9 +1245,16 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
-        public static final int action_settings=0x7f0a000f;
+        /**  menu 
+         */
+        public static final int about=0x7f0a0011;
         public static final int app_name=0x7f0a000d;
-        public static final int hello_world=0x7f0a000e;
+        public static final int main_bg=0x7f0a0010;
+        public static final int need_help=0x7f0a0012;
+        /**  Main Activity 
+         */
+        public static final int projects=0x7f0a000e;
+        public static final int todo_lists=0x7f0a000f;
     }
     public static final class style {
         /** 

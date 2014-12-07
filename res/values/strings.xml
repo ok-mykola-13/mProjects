@@ -2,7 +2,14 @@
 <resources>
 
     <string name="app_name">mProjects</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    
+    <!-- Main Activity -->
+    	<string name="projects">Projects</string>
+    	<string name="todo_lists">Todo-lists</string>
+    	<string name="main_bg">Main background</string>
+    	
+    	<!-- menu -->
+    	<string name="about">About</string>
+    	<string name="need_help">Need help?</string>
 
 </resources>
