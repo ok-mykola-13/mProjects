@@ -2,14 +2,28 @@
 <resources>
 
     <string name="app_name">mProjects</string>
-    
+
     <!-- Main Activity -->
-    	<string name="projects">Projects</string>
-    	<string name="todo_lists">Todo-lists</string>
-    	<string name="main_bg">Main background</string>
-    	
-    	<!-- menu -->
-    	<string name="about">About</string>
-    	<string name="need_help">Need help?</string>
+    <string name="projects">Projects</string>
+    <string name="project">Project</string>
+    <string name="todo_lists">Todo-lists</string>
+    <string name="main_bg">Main background</string>
+
+    <!-- menu -->
+    <string name="about">About</string>
+    <string name="need_help">Need help?</string>
+    <string name="title_activity_activity_projects">Projects</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_project">Project</string>
+    <string name="cd_change">Change</string>
+    <string name="cd_delete">Delete</string>
+    
+    <!-- ProjectActivity -->
+    <!-- plan fragment -->
+    <string name="plan_title">Plan: </string>
+    
+    <!-- todolists fragment -->
+    <string name="todolists_title">To-do lists: </string>
 
 </resources>

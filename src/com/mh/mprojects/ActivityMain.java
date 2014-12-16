@@ -1,12 +1,11 @@
 package com.mh.mprojects;
 
-import com.example.mprojects.R;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 public class ActivityMain extends ActionBarActivity {
@@ -28,7 +27,8 @@ public class ActivityMain extends ActionBarActivity {
 			
 			@Override
 			public void onClick(View v) {
-				
+				// Go to the ActivityProjects
+				startActivity(new Intent(v.getContext(), ActivityProjects.class));
 			}
 		});
 	}
