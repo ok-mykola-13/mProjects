@@ -8,5 +8,5 @@
 	<dimen name="main_btns_padding">20dp</dimen>
 	
 	<!-- Activity project -->
-	<dimen name="fragment_title_font">30dp</dimen>
+	<dimen name="fragment_title_font">35dp</dimen>
 </resources>

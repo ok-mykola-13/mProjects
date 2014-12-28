@@ -7,6 +7,6 @@
         android:id="@+id/gv_projects"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:numColumns="5"/>
+        android:numColumns="2"/>
 
 </RelativeLayout>

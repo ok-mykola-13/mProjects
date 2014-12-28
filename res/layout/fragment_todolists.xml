@@ -2,32 +2,59 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ccc" >
-    
+    android:background="#ccffffff" >
+     
     <TextView
-        android:id="@+id/tv_todolists_title"
+        android:id="@+id/tv_f_todos_sort"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:text="Sort by: "
+        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/s_lists_sort"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="@string/todolists_title"
-        android:textSize="@dimen/fragment_title_font" />
-    <ImageView
-        android:id="@+id/img_add_todolist"
+        android:layout_toRightOf="@+id/tv_f_todos_sort"
+        android:layout_margin="10dp"
+        android:padding="15dp" />
+    
+    <LinearLayout
+        android:id="@+id/ll_add_todolist"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+	    android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="15dp"
-        android:src="@drawable/ic_launcher" />
+	    android:layout_alignParentTop="true"
+	    android:padding="5dp"
+	    android:layout_marginTop="30dp"
+	    android:layout_marginRight="15dp"
+	    android:layout_marginLeft="30dp"
+        android:orientation="horizontal"
+        android:background="@drawable/border">
+	    <ImageView
+	        android:id="@+id/img_add_todolist"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="10dp"
+	        android:src="@drawable/plus" />
+	    <TextView
+	        android:id="@+id/tv_add_todolist"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="2dp"
+	        android:text="add item"
+	        android:textSize="20sp" />
+    </LinearLayout>
     
     <ListView
         android:id="@+id/lv_todolists"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_todolists_title" />
+        android:layout_below="@+id/ll_add_todolist"
+        android:layout_marginTop="50dp" />
     
 
 </RelativeLayout>

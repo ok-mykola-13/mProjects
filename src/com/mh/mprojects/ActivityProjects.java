@@ -1,68 +1,90 @@
 package com.mh.mprojects;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;   
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.CursorLoader;
+import android.support.v4.content.Loader;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.content.ContentResolver;
+import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnLongClickListener;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.View.OnLongClickListener;
 import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import android.view.animation.TranslateAnimation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class ActivityProjects extends ActionBarActivity {
+public class ActivityProjects extends FragmentActivity 
+							implements LoaderManager.LoaderCallbacks<Cursor>{
+	
+	public String MAIN_FOLDER = "mProjects"; 
+	
+	private FragmentMain f_main;
 	
 	private DemoCollectionPagerAdapter mDemoCollectionPagerAdapter;
     private ViewPager mViewPager;
     
     private ArrayList<MProject> projectsList;
+    private ArrayList<MProject> projectsList_0;
     private ArrayList<MProject> projectsList_1;
     private ArrayList<MProject> projectsList_2;
-    private ArrayList<MProject> projectsList_3;
+    private ProjectsAdapter projectsAdapter_0;
     private ProjectsAdapter projectsAdapter_1;
     private ProjectsAdapter projectsAdapter_2;
-    private ProjectsAdapter projectsAdapter_3;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_projects);
 		
-		projectsList = new ArrayList<MProject>();
-		projectsList.add(new MProject(1,"Project_1",1));
-		projectsList.add(new MProject(2,"Project_2",1));
-		projectsList.add(new MProject(3,"Project_3",1));
-		projectsList.add(new MProject(4,"Project_4",2));
-		projectsList.add(new MProject(5,"Project_5",2));
-		projectsList.add(new MProject(6,"Project_6",3));
-		projectsList.add(new MProject(7,"Project_7",3));
+		//Create the Main Folder
+		File mainDirectory = new File(Environment.getExternalStorageDirectory() + "/" + MAIN_FOLDER);
+		if (!mainDirectory.exists())
+			mainDirectory.mkdirs();
 		
+		overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+		
+		f_main = (FragmentMain)getSupportFragmentManager()
+							.findFragmentById(R.id.f_main_splash);
+		
+		projectsList = new ArrayList<MProject>();
+		projectsList_0 = new ArrayList<MProject>();
 		projectsList_1 = new ArrayList<MProject>();
 		projectsList_2 = new ArrayList<MProject>();
-		projectsList_3 = new ArrayList<MProject>();
 				
 		splitProjectsOnGroups(projectsList);
-		
-		final ActionBar actionBar = getSupportActionBar();
 		
 		mDemoCollectionPagerAdapter =
                 new DemoCollectionPagerAdapter(
@@ -70,61 +92,64 @@ public class ActivityProjects extends ActionBarActivity {
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mDemoCollectionPagerAdapter);
         
-        mViewPager.setOnPageChangeListener(
-                new ViewPager.SimpleOnPageChangeListener() {
-                    @Override
-                    public void onPageSelected(int position) {
-                        // When swiping between pages, select the
-                        // corresponding tab.
-                        //getSupportActionBar().setSelectedNavigationItem(position);
-                    }
-                });
-
-
-
-	    // Specify that tabs should be displayed in the action bar.
-	    //actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-	    // Create a tab listener that is called when the user changes tabs.
-	    ActionBar.TabListener tabListener = new ActionBar.TabListener() {
-	        public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-	            // show the given tab
-	        	mViewPager.setCurrentItem(tab.getPosition());
-	        }
-
-	        public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-	            // hide the given tab
-	        }
-
-	        public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-	            // probably ignore this event
-	        }
-	    };
-
-	    // Add 3 tabs, specifying the tab's text and TabListener
-	    for (int i = 0; i < 3; i++) {
-	        actionBar.addTab(
-	                actionBar.newTab()
-	                        .setText("Tab " + (i + 1))
-	                        .setTabListener(tabListener));
-	    }
-
+        getSupportLoaderManager().initLoader(0, null, this);
 	}
 	
+	public void restartLoader(){
+		getSupportLoaderManager().restartLoader(0, null, this);
+	}
+	
+	private void updateProjectAdapters(){
+		
+		splitProjectsOnGroups(projectsList);
+		if(projectsAdapter_0 != null){
+			projectsAdapter_0.notifyDataSetChanged();
+		}
+		if(projectsAdapter_1 != null){
+			projectsAdapter_1.notifyDataSetChanged();
+		}
+		if(projectsAdapter_2 != null){
+			projectsAdapter_2.notifyDataSetChanged();			
+		}
+		
+	}
+	
+	//separate projects on groups
 	private void splitProjectsOnGroups(ArrayList<MProject> list){
+		
+		projectsList_0.clear();
+		projectsList_1.clear();
+		projectsList_2.clear();
 		
 		for (MProject p : list) {
 			switch(p.getGroup()){
+			case 0:
+				projectsList_0.add(p);
+				break;
 			case 1:
 				projectsList_1.add(p);
 				break;
 			case 2:
 				projectsList_2.add(p);
 				break;
-			case 3:
-				projectsList_3.add(p);
-				break;
 			}
+		}
+		
+		projectsList_0.add(new MProject(0));
+		projectsList_1.add(new MProject(1));
+		projectsList_2.add(new MProject(2));
+	}
+	
+	//hide splash fragment
+	public void hideSplash(){
+		if(f_main != null){
+			FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+			//ft.setCustomAnimations(R.animator.slide_left_in, R.animator.slide_left_out);
+			ft.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+			ft.hide(f_main);
+			ft.remove(f_main);
+			ft.commit();
+			f_main = null;
 		}
 	}
 
@@ -146,8 +171,22 @@ public class ActivityProjects extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 	
+	public static void copyFile(File src, File dst) throws IOException {
+		InputStream in = new FileInputStream(src);
+		OutputStream out = new FileOutputStream(dst);
+
+		// Transfer bytes from in to out
+	    byte[] buf = new byte[1024];
+	    int len;
+	    while ((len = in.read(buf)) > 0) {
+	        out.write(buf, 0, len);
+	    }
+	    in.close();
+	    out.close();
+	}
 	
 	public class DemoCollectionPagerAdapter extends FragmentPagerAdapter {
+		
 	    public DemoCollectionPagerAdapter(FragmentManager fm) {
 	        super(fm);
 	    }
@@ -157,20 +196,20 @@ public class ActivityProjects extends ActionBarActivity {
 	        DemoObjectFragment fragment = new DemoObjectFragment();
 	        
 	        if(i == 0){
-		        projectsAdapter_1 = new ProjectsAdapter(getBaseContext(), 
+		        projectsAdapter_0 = new ProjectsAdapter(getBaseContext(), 
+						R.layout.item_gv_projects, 
+						projectsList_0);
+		        fragment.adapter = projectsAdapter_0;
+	        }else if(i == 1){
+	        	projectsAdapter_1 = new ProjectsAdapter(getBaseContext(), 
 						R.layout.item_gv_projects, 
 						projectsList_1);
-		        fragment.adapter = projectsAdapter_1;
-	        }else if(i == 1){
+	        	fragment.adapter = projectsAdapter_1;
+	        }else if(i == 2){
 	        	projectsAdapter_2 = new ProjectsAdapter(getBaseContext(), 
 						R.layout.item_gv_projects, 
 						projectsList_2);
 	        	fragment.adapter = projectsAdapter_2;
-	        }else if(i == 2){
-	        	projectsAdapter_3 = new ProjectsAdapter(getBaseContext(), 
-						R.layout.item_gv_projects, 
-						projectsList_3);
-	        	fragment.adapter = projectsAdapter_3;
 	        }
 
 	        
@@ -212,10 +251,50 @@ public class ActivityProjects extends ActionBarActivity {
 	    }
 	}
 	
+	//Initialize Loader for Projects
+	@Override
+	public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+		
+		CursorLoader loader = new CursorLoader(this,
+				MainProvider.CONTENT_URI_PROJECTS,
+				null,
+				null,
+				null,
+				MainProvider.PROJECTS_NAME);
+		
+		return loader;
+	}
 	
-	//Adapter for GridView of Projects
-	private class ProjectsAdapter extends ArrayAdapter<MProject>{
+	@Override
+	public void onLoadFinished(Loader<Cursor> loader, Cursor cursor){
+		int IdIndex = cursor.getColumnIndexOrThrow(MainProvider.KEY_ID);
+		int NameIndex = cursor.getColumnIndexOrThrow(MainProvider.PROJECTS_NAME);
+		int GroupIndex = cursor.getColumnIndexOrThrow(MainProvider.PROJECTS_GROUP);
+		int CreatedIndex = cursor.getColumnIndexOrThrow(MainProvider.PROJECTS_CREATE_DATE);
+		
+		projectsList.clear();
+		
+		while(cursor.moveToNext()){
+			int id = cursor.getInt(IdIndex);
+			MProject p = new MProject(id,
+					cursor.getString(NameIndex),
+					cursor.getInt(GroupIndex),
+					cursor.getLong(CreatedIndex));
+				
+			projectsList.add(p);
+		}		
+		updateProjectAdapters();
+	}
+	
+	@Override
+	public void onLoaderReset(Loader<Cursor> arg0) {	
+	}
+	
+	
+	public class ProjectsAdapter extends ArrayAdapter<MProject>{
 
+		private Typeface tf;
+		
 		private int resource;
 			
 		public ProjectsAdapter(Context context,
@@ -228,7 +307,10 @@ public class ActivityProjects extends ActionBarActivity {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent){
 			
-			RelativeLayout rootView;
+			tf = Typeface.createFromAsset(getContext().getAssets(),
+	                "fonts/comic.ttf");
+			
+			final RelativeLayout rootView;
 			
 			MProject item = getItem(position);
 
@@ -246,120 +328,87 @@ public class ActivityProjects extends ActionBarActivity {
 			}
 			
 			//set name
-			TextView nameView = (TextView)rootView.findViewById(R.id.txt_project_name);
+			final TextView nameView = (TextView)rootView.findViewById(R.id.txt_project_name);
 			nameView.setText(name);
-			/*
-			//set project's icon
-			File projectIcon = new File(Environment.getExternalStorageDirectory() + 
-					"/" + ActivityMain.MAIN_FOLDER +
-					"/projects" +
-					"/" + name +
-					"/projectIcon");
+			nameView.setTypeface(tf);
+			nameView.setVisibility(View.VISIBLE);
+			final TextView dateView = (TextView)rootView.findViewById(R.id.txt_project_date);
+			dateView.setTypeface(tf);
 			
-			ImageView logoView = (ImageView)rootView.findViewById(R.id.img_project_logo);
-			if(projectIcon.exists()){
-				Bitmap icon = BitmapFactory.decodeFile(projectIcon.getAbsolutePath());
-				logoView.setImageBitmap(icon);				
-			}else{
-				logoView.setImageDrawable(getResources().getDrawable(R.drawable.p));
-			}
-			*/
+			
+			final EditText newName = (EditText)rootView.findViewById(R.id.et_project_name);
+			newName.setTypeface(tf);
+			newName.setVisibility(View.INVISIBLE);
 			
 			/* Behavior: click -> to project; long click -> edit */
 			final Button btn_ch = (Button)rootView.findViewById(R.id.btn_change_project);
+			final Button btn_can = (Button)rootView.findViewById(R.id.btn_cancel_project);
 			final Button btn_d = (Button)rootView.findViewById(R.id.btn_delete_project);
+			final Button btn_add = (Button)rootView.findViewById(R.id.btn_add_project);
+			btn_add.setVisibility(View.INVISIBLE);
+			
+			btn_ch.setTypeface(tf);
+			btn_can.setTypeface(tf);
+			btn_d.setTypeface(tf);
+			
+			final RelativeLayout rl_project = (RelativeLayout)rootView.findViewById(R.id.rl_project);
+			final RelativeLayout rl_project_edit = (RelativeLayout)rootView.findViewById(R.id.rl_project_edit);
+			rl_project_edit.setVisibility(View.INVISIBLE);
+			
 			final ImageView img_logo = (ImageView)rootView.findViewById(R.id.img_project_logo);
-			img_logo.setOnLongClickListener(new OnLongClickListener(){
+			ImageView img_logo_set = (ImageView)rootView.findViewById(R.id.img_project_logo_change);
+			img_logo_set.setOnClickListener(new OnClickListener(){
+
+				@Override
+				public void onClick(View v) {
+					Toast.makeText(getContext(), "Select new logo", Toast.LENGTH_SHORT).show();
+					DialogPickFile dialog = DialogPickFile.newInstance(
+							"Change image: ", 
+							0, 
+							img_logo);
+					dialog.show(getSupportFragmentManager(), "change image");
+				}
+				
+			});
+			img_logo.setOnClickListener(new View.OnClickListener(){
+
+				@Override
+				public void onClick(View v) {
+					if(btn_add.getVisibility() == View.VISIBLE){
+						Toast.makeText(getContext(), "change image", Toast.LENGTH_SHORT).show();
+						DialogPickFile dialog = DialogPickFile.newInstance(
+													"Change image: ", 
+													0, 
+													(ImageView) v);
+						dialog.show(getSupportFragmentManager(), "change image");
+					}
+				}
+				
+			});
+			rootView.setOnLongClickListener(new OnLongClickListener(){
 
 				@Override
 				public boolean onLongClick(View v) {
 					
+					// this is add icon project
+					if(p_id == 0) return true;	
+					
 					// animations for buttons
-					TranslateAnimation ta1 = new TranslateAnimation(0, 100, 0, 0);
-					ta1.setDuration(200);
-					ta1.setFillAfter(true);
-					final TranslateAnimation ta2 = new TranslateAnimation(100, 0, 0, 0);
-					ta2.setDuration(200);
-					ta2.setFillAfter(true);
+					Animation ta2 = AnimationUtils.loadAnimation(getContext(), R.animator.slide_top_in);
+					Animation ta3 = AnimationUtils.loadAnimation(getContext(), R.animator.slide_top_out);
 					
-					// animation for project's logo
-					TranslateAnimation ta3 = new TranslateAnimation(0, -100, 0, 0);
-					ta3.setDuration(200);
-					ta3.setFillAfter(true);
-					final TranslateAnimation ta4 = new TranslateAnimation(-100, 0, 0, 0);
-					ta4.setDuration(200);
-					ta4.setFillAfter(true);
-					
-					if(btn_ch.getVisibility() != View.VISIBLE){
-						ta1.setAnimationListener(new AnimationListener(){
-							@Override
-							public void onAnimationStart(Animation animation) {}
-							
-							@Override
-							public void onAnimationEnd(Animation animation) {
-								btn_ch.bringToFront();
-								btn_d.bringToFront();
-								btn_ch.startAnimation(ta2);
-								btn_d.startAnimation(ta2);
-							}
-
-							@Override
-							public void onAnimationRepeat(Animation animation) {}
-							
-						});
-						ta3.setAnimationListener(new AnimationListener(){
-							@Override
-							public void onAnimationStart(Animation animation) {}
-							
-							@Override
-							public void onAnimationEnd(Animation animation) {
-								img_logo.startAnimation(ta4);
-							}
-
-							@Override
-							public void onAnimationRepeat(Animation animation) {}
-							
-						});
-						btn_ch.setVisibility(View.VISIBLE);
-						btn_ch.startAnimation(ta1);
-						btn_d.setVisibility(View.VISIBLE);
-						btn_d.startAnimation(ta1);
-						img_logo.startAnimation(ta3);
-						
+					if(rl_project_edit.getVisibility() != View.VISIBLE){
+						rl_project_edit.startAnimation(ta2);
+						rl_project_edit.setVisibility(View.VISIBLE);
+						newName.setText(nameView.getText());
+						nameView.setVisibility(View.GONE);
+						newName.setVisibility(View.VISIBLE);					
 					}else{
-						ta1.setAnimationListener(new AnimationListener(){
-							@Override
-							public void onAnimationStart(Animation animation) {}
-							
-							@Override
-							public void onAnimationEnd(Animation animation) {
-								btn_ch.startAnimation(ta2);
-								btn_d.startAnimation(ta2);
-							}
-
-							@Override
-							public void onAnimationRepeat(Animation animation) {}
-							
-						});
-						ta3.setAnimationListener(new AnimationListener(){
-							@Override
-							public void onAnimationStart(Animation animation) {}
-							
-							@Override
-							public void onAnimationEnd(Animation animation) {
-								img_logo.bringToFront();
-								img_logo.startAnimation(ta4);
-							}
-
-							@Override
-							public void onAnimationRepeat(Animation animation) {}
-							
-						});
-						btn_ch.startAnimation(ta1);
-						btn_d.startAnimation(ta1);
-						img_logo.startAnimation(ta3);
-						btn_ch.setVisibility(View.INVISIBLE);
-						btn_d.setVisibility(View.INVISIBLE);
+						rl_project_edit.startAnimation(ta3);
+						rl_project_edit.setVisibility(View.INVISIBLE);
+						
+						nameView.setVisibility(View.VISIBLE);
+						newName.setVisibility(View.GONE);
 					}
 					
 					return true;
@@ -367,13 +416,60 @@ public class ActivityProjects extends ActionBarActivity {
 				
 			});
 			
-			img_logo.setOnClickListener(new View.OnClickListener(){
+			btn_add.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Toast.makeText(getContext(), "add project", Toast.LENGTH_SHORT).show();
+					ContentResolver cr = getContentResolver();
+					ContentValues values = new ContentValues();
+					values.put(MainProvider.PROJECTS_NAME, newName.getText().toString());
+					values.put(MainProvider.PROJECTS_GROUP, 0);
+					values.put(MainProvider.PROJECTS_CREATE_DATE, java.lang.System.currentTimeMillis());
+					cr.insert(MainProvider.CONTENT_URI_PROJECTS, values);	
+					
+					restartLoader();
+				}
+			});
+			
+			btn_d.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					String where = null;
+					String[] whereArgs = null;
+					
+					ContentResolver cr_d = getContentResolver();
+					Uri rowURI = ContentUris.withAppendedId(
+							MainProvider.CONTENT_URI_PROJECTS,
+							p_id);
+					int deletedRowCount = cr_d.delete(rowURI, where, whereArgs);
+					if(deletedRowCount > -1){
+						restartLoader();
+						Toast.makeText(getContext(), "Delete", Toast.LENGTH_SHORT).show();
+					}			
+				}
+			});
+			
+			rootView.setOnClickListener(new View.OnClickListener(){
 
 				@Override
-				public void onClick(View v) {					
-					Intent i = new Intent(getBaseContext(), ActivityProject.class);
-					i.putExtra("p_id", p_id);
-					startActivity(i);
+				public void onClick(View v) {
+					if(p_id != 0){
+						Intent i = new Intent(getContext(), ActivityProject.class);
+						i.putExtra("p_id", p_id);
+						startActivity(i);
+					}else{
+						if(btn_add.getVisibility() == View.INVISIBLE){
+							nameView.setVisibility(View.GONE);
+							newName.setVisibility(View.VISIBLE);
+							btn_add.setVisibility(View.VISIBLE);
+						}else{
+							nameView.setVisibility(View.VISIBLE);
+							newName.setVisibility(View.INVISIBLE);
+							btn_add.setVisibility(View.INVISIBLE);
+						}
+					}
 				}
 				
 			});

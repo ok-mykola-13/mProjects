@@ -2,5 +2,7 @@
 <lint>
     <issue id="NewApi">
         <ignore path="src/com/mh/mprojects/ActivityMain.java" />
+        <ignore path="src/com/mh/mprojects/FragmentProjectPlan.java" />
+        <ignore path="src/com/mh/mprojects/FragmentProjectTodolists.java" />
     </issue>
 </lint>

@@ -3,29 +3,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-    <TextView
-        android:id="@+id/tv_project_plan_task_num"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="15dp"
-        android:text="1." />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"        
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp">
     
-    <ImageView
-        android:id="@+id/img_project_plan_task_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ic_launcher"
-        android:contentDescription="menu" />
-    
-    <TextView
-        android:id="@+id/tv_project_plan_task_name"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_toRightOf="@+id/tv_project_plan_task_num"
-        android:layout_toLeftOf="@+id/img_project_plan_task_menu"
-        android:text="some actions" />
+	    <TextView
+	        android:id="@+id/tv_project_plan_task_num"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:layout_marginRight="10dp"
+	        android:layout_marginTop="15dp"
+	        android:text="1."
+	        android:textSize="24sp" />
+	    
+	    <CheckBox
+	        android:id="@+id/chb_plan_item"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="10dp"
+	        android:button="@xml/custom_checkbox"
+	        android:focusable="false" />
+	    
+	    <TextView
+	        android:id="@+id/tv_project_plan_task_name"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:layout_marginTop="15dp"
+	        android:text="some actions"
+	        android:textSize="24sp"
+	        android:singleLine="true" />
+	    
+	    </LinearLayout>
+	    
+    	<ImageView
+	        android:id="@+id/img_project_plan_task_menu"
+	        android:layout_width="15dp"
+	        android:layout_height="match_parent"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentBottom="true"
+	        android:layout_marginRight="10dp"
+	        android:src="@drawable/menu"
+	        android:contentDescription="menu"
+	        android:clickable="true" />
     
 
 </RelativeLayout>

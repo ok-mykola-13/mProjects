@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:descendantFocusability="beforeDescendants" >
     
     <CheckBox
         android:id="@+id/chb_project_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:button="@xml/custom_checkbox_small" />
     <ImageView
         android:id="@+id/img_project_list_menu"
-        android:layout_width="wrap_content"
+        android:layout_width="15dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_launcher" />
-    
-    <ImageView 
-        android:id="@+id/img_project_list_priority"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/menu" />
+
+    <Spinner
+        android:id="@+id/s_list_prior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/img_project_list_menu"
-        android:src="@drawable/ic_launcher"/>
+        android:layout_centerVertical="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginRight="80dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
     
     <TextView
         android:id="@+id/tv_project_list_name"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/chb_project_list"
         android:layout_toLeftOf="@+id/img_project_list_priority"
-        android:text="Name of the list" />
-    
+        android:text="Name of the list"
+        android:textSize="20sp" />
 
 </RelativeLayout>

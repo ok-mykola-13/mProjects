@@ -14,8 +14,9 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".ActivityMain"
-            android:label="@string/app_name" >
+            android:name=".ActivityProjects"
+            android:label="@string/title_activity_activity_projects"
+            android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,13 +24,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivityProjects"
-            android:label="@string/title_activity_activity_projects" >
-        </activity>
-        <activity
             android:name=".ActivityProject"
             android:label="@string/project" >
         </activity>
+        <provider android:name="com.mh.mprojects.MainProvider"
+		    android:authorities="com.mh.mprojects"
+		    android:exported="false" />
     </application>
 
 </manifest>

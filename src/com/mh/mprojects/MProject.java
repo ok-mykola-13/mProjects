@@ -5,6 +5,7 @@ public class MProject {
 	private int _id;
 	private String name;
 	private int group;
+	private long created_date;
 	
 	public int get_id() {
 		return _id;
@@ -28,13 +29,25 @@ public class MProject {
 	public void setGroup(int group) {
 		this.group = group;
 	}
+	public long getCreatedDate(){
+		return created_date;
+	}
+	public void setCreatedDate(long created_date){
+		this.created_date = created_date;
+	}
 	
-	public MProject(int _id, String name, int group) {
+	public MProject(int _id, String name, int group, long created_date) {
 		this._id = _id;
 		this.name = name;
 		this.group = group;
+		this.created_date = created_date;
 	}
 	
-	
+	public MProject(int group) {
+		this._id = 0;
+		this.name = "Add new Project";
+		this.group = group;
+		this.created_date = 0;
+	}
 
 }

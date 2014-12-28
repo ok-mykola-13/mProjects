@@ -5,7 +5,7 @@ public class MList {
 	private int _id;
 	private String name;
 	private boolean done;
-	private int priority;
+	private int order_num;
 	private int project;
 	private int type;
 	
@@ -31,11 +31,11 @@ public class MList {
 	public void setDone(boolean done) {
 		this.done = done;
 	}
-	public int getPriority() {
-		return priority;
+	public int getOrderNum() {
+		return order_num;
 	}
-	public void setPriority(int priority) {
-		this.priority = priority;
+	public void setOrderNum(int order_num) {
+		this.order_num = order_num;
 	}
 	public int getProject() {
 		return project;
@@ -50,14 +50,28 @@ public class MList {
 		this.type = type;
 	}
 	
-	public MList(int _id, String name, boolean done, int priority, int project,
+	public MList(int _id, String name, boolean done, int order_num, int project,
 			int type) {
 		this._id = _id;
 		this.name = name;
 		this.done = done;
-		this.priority = priority;
+		this.order_num = order_num;
 		this.project = project;
 		this.type = type;
+	}
+	public MList(int _id, String name, int done, int order_num, int project,
+			int type) {
+		this._id = _id;
+		this.name = name;
+		this.done = (done==0)? false : true;
+		this.order_num = order_num;
+		this.project = project;
+		this.type = type;
+	}
+	
+	@Override
+	public String toString(){
+		return order_num + ". " + name;
 	}
 	
 }
