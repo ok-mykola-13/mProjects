@@ -6,6 +6,7 @@
         <ignore path="src/com/mh/mprojects/DialogPickList.java" />
     </issue>
     <issue id="NewApi">
+        <ignore path="src/com/mh/mprojects/ActivityMain.java" />
         <ignore path="src/com/mh/mprojects/ActivityProject.java" />
         <ignore path="src/com/mh/mprojects/ActivityProjects.java" />
         <ignore path="src/com/mh/mprojects/FragmentProjectPlan.java" />
