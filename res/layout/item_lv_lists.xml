@@ -2,48 +2,47 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="15dp"
-    android:paddingRight="15dp"
-    android:descendantFocusability="beforeDescendants" >
+    android:paddingLeft="@dimen/pl_item_lists_main"
+    android:paddingRight="@dimen/pr_item_lists_main"
+    android:descendantFocusability="blocksDescendants" >
     
     <CheckBox
         android:id="@+id/chb_project_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/mr_item_lists_chb"
+        android:layout_marginTop="@dimen/mt_item_lists_chb"
         android:focusable="false"
-        android:focusableInTouchMode="false"
         android:button="@xml/custom_checkbox_small" />
     <ImageView
         android:id="@+id/img_project_list_menu"
-        android:layout_width="15dp"
+        android:layout_width="@dimen/w_item_lists_menu"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/menu" />
+        android:src="@drawable/menu"
+        android:contentDescription="@string/menu" />
 
     <Spinner
         android:id="@+id/s_list_prior"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/w_item_lists_spinner"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/img_project_list_menu"
         android:layout_centerVertical="true"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:layout_marginRight="80dp"
-        android:focusable="false"
-        android:focusableInTouchMode="false" />
+        android:paddingTop="@dimen/pt_item_lists_spinner"
+        android:paddingBottom="@dimen/pb_item_lists_spinner"
+        android:layout_marginRight="@dimen/mr_item_lists_spinner"
+        android:focusable="false"/>
     
     <TextView
         android:id="@+id/tv_project_list_name"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/mt_item_lists_name"
         android:layout_toRightOf="@+id/chb_project_list"
-        android:layout_toLeftOf="@+id/img_project_list_priority"
-        android:text="Name of the list"
-        android:textSize="20sp" />
+        android:layout_toLeftOf="@+id/img_project_list_menu"
+        android:text="@string/list"
+        android:textSize="@dimen/t_item_lists_name" />
 
 </RelativeLayout>

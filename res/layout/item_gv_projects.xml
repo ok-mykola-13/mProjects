@@ -1,118 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/project_bg">
     
     <RelativeLayout 
         android:id="@+id/rl_project"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 	    <ImageView
 	        android:id="@+id/img_project_logo_patt"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
+	        android:layout_width="@dimen/w_project_icon"
+	        android:layout_height="@dimen/h_project_icon"
 	        android:layout_alignParentLeft="true"
-	        android:padding="10dp"
-	        android:contentDescription="@string/cd_project" 
-	        android:src="@drawable/project_logo"/>
+	        android:padding="@dimen/p_project_icon_bg"
+	        android:contentDescription="@string/project_icon" 
+	        android:src="@drawable/project_logo_bg"/>
 	    <ImageView
 	        android:id="@+id/img_project_logo"
-	        android:layout_width="200dp"
-	        android:layout_height="200dp"
+	        android:layout_width="@dimen/w_project_icon"
+	        android:layout_height="@dimen/h_project_icon"
 	        android:layout_alignParentLeft="true"
-	        android:padding="25dp"
-	        android:contentDescription="@string/cd_project" 
-	        android:src="@drawable/piano"/>
+	        android:padding="@dimen/p_project_icon"
+	        android:contentDescription="@string/project_icon" 
+	        android:src="@drawable/default_project_logo"/>
 	    <TextView
 	        android:id="@+id/txt_project_name"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_toRightOf="@+id/img_project_logo"
-	        android:layout_marginTop="50dp"
-	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="@dimen/mt_project_title"
+	        android:layout_marginLeft="@dimen/ml_project_title"
 	        android:gravity="center"
 	        android:singleLine="true"
-	        android:text="@string/cd_project"
-	        android:textSize="30sp" />
-	    <EditText
-	        android:id="@+id/et_project_name"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_toRightOf="@+id/img_project_logo"
-	        android:layout_marginTop="43dp"
-	        android:layout_marginLeft="18dp"
-	        android:layout_marginRight="50dp"
-	        android:singleLine="true"
-	        android:text="@string/cd_project"
-	        android:textSize="30sp"
-	        android:visibility="gone" />
+	        android:text="@string/project"
+	        android:textSize="@dimen/t_project_title" />
 	    <TextView
 	        android:id="@+id/txt_project_date"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_toRightOf="@+id/img_project_logo"
-	        android:layout_marginTop="100dp"
-	        android:layout_marginLeft="30dp"
+	        android:layout_marginTop="@dimen/mt_project_date"
+	        android:layout_marginLeft="@dimen/ml_project_date"
 	        android:gravity="center"
 	        android:singleLine="true"
-	        android:text="Date: 10/12/2014"
-	        android:textSize="25sp"
+	        android:text="@string/date_num"
+	        android:textSize="@dimen/t_project_date"
 	        android:textColor="#999" />
-	    <Button
-	        android:id="@+id/btn_add_project"
-	        android:layout_width="wrap_content"
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_project_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+	    <ImageView
+    	    android:id="@+id/img_project_logo_add"
+    	    android:layout_width="@dimen/w_project_icon"
+    	    android:layout_height="@dimen/h_project_icon"
+    	    android:src="@drawable/project_logo_change"
+    	    android:contentDescription="@string/project_icon" />
+
+	    <EditText
+	        android:id="@+id/et_project_add_name"
+	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/txt_project_date"
-	        android:layout_alignParentRight="true"
-	        android:padding="5dp"
-	        android:layout_marginRight="25dp"
-	        android:layout_marginTop="15dp"
-	        android:text="Add"
-	        android:background="@drawable/border_green"
-	        android:visibility="invisible" />
+	        android:layout_toRightOf="@+id/img_project_logo_add"
+	        android:layout_marginTop="@dimen/mt_project_edt_name"
+	        android:layout_marginLeft="@dimen/ml_project_edt_name"
+	        android:layout_marginRight="@dimen/mr_project_edt_name"
+	        android:singleLine="true"
+	        android:text="@string/project"
+	        android:textSize="@dimen/t_project_edt_name" />
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_alignParentBottom="true"
+	        android:paddingBottom="@dimen/pb_project_rl_button">
+		    <Button
+		        android:id="@+id/btn_cancel_add_project"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:minHeight="0dp"
+		        android:layout_toLeftOf="@+id/btn_add_project"
+		        android:padding="@dimen/p_project_button_edt"
+		        android:layout_marginRight="@dimen/mr_project_button_edt_cancel"
+		        android:text="@android:string/cancel"
+		        android:background="@drawable/border_blue"/>
+		    <Button
+		        android:id="@+id/btn_add_project"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:minHeight="0dp"
+		        android:layout_alignParentRight="true"
+		        android:padding="@dimen/p_project_button_edt"
+		        android:layout_marginRight="@dimen/mr_project_button_edt_save"
+		        android:text="@string/add"
+		        android:background="@drawable/border_green" />
+	    </RelativeLayout>
     </RelativeLayout>
     
     <RelativeLayout
         android:id="@+id/rl_project_edit"
         android:layout_width="match_parent"
-    	android:layout_height="match_parent"
+    	android:layout_height="wrap_content"
     	android:visibility="invisible" >
     	<ImageView
     	    android:id="@+id/img_project_logo_change"
-    	    android:layout_width="wrap_content"
-    	    android:layout_height="wrap_content"
-    	    android:src="@drawable/project_logo_change" />
-	    <Button
-	        android:id="@+id/btn_change_project"
-	        android:layout_width="wrap_content"
+    	    android:layout_width="@dimen/w_project_icon"
+    	    android:layout_height="@dimen/h_project_icon"
+    	    android:src="@drawable/project_logo_change"
+    	    android:contentDescription="@string/project_icon" />
+    	<EditText
+	        android:id="@+id/et_project_edt_name"
+	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/img_project_logo_change"
+	        android:layout_marginTop="@dimen/mt_project_edt_name"
+	        android:layout_marginLeft="@dimen/ml_project_edt_name"
+	        android:layout_marginRight="@dimen/mr_project_edt_name"
+	        android:singleLine="true"
+	        android:text="@string/project"
+	        android:textSize="@dimen/t_project_edt_name" />
+    	<RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
 	        android:layout_alignParentBottom="true"
-	        android:layout_alignParentRight="true"
-	        android:padding="5dp"
-	        android:layout_marginRight="25dp"
-	        android:text="Save"
-	        android:background="@drawable/border_green" />
-	    <Button
-	        android:id="@+id/btn_cancel_project"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentBottom="true"
-	        android:layout_toLeftOf="@+id/btn_change_project"
-	        android:layout_marginRight="10dp"
-	        android:padding="5dp"
-	        android:text="Cancel"
-	        android:background="@drawable/border_blue" />
-	    <Button
-	        android:id="@+id/btn_delete_project"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentBottom="true"
-	        android:layout_toLeftOf="@+id/btn_cancel_project"
-	        android:layout_marginRight="10dp"
-	        android:padding="5dp"
-	        android:text="@string/cd_delete"
-	        android:background="@drawable/border_red" />
+	        android:paddingBottom="@dimen/pb_project_rl_button">
+		    <Button
+		        android:id="@+id/btn_change_project"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:minHeight="0dp"
+		        android:layout_alignParentRight="true"
+		        android:padding="@dimen/p_project_button_edt"
+		        android:layout_marginRight="@dimen/mr_project_button_edt_save"
+		        android:text="@string/save"
+		        android:background="@drawable/border_green" />
+		    <Button
+		        android:id="@+id/btn_cancel_project"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:minHeight="0dp"
+		        android:layout_toLeftOf="@+id/btn_change_project"
+		        android:layout_marginRight="@dimen/mr_project_button_edt_cancel"
+		        android:padding="@dimen/p_project_button_edt"
+		        android:text="@android:string/cancel"
+		        android:background="@drawable/border_blue" />
+		    <Button
+		        android:id="@+id/btn_delete_project"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:minHeight="0dp"
+		        android:layout_toLeftOf="@+id/btn_cancel_project"
+		        android:layout_marginRight="@dimen/mr_project_button_edt_cancel"
+		        android:padding="@dimen/p_project_button_edt"
+		        android:text="@string/delete"
+		        android:background="@drawable/border_red" />
+		</RelativeLayout>
     </RelativeLayout>
     
 </RelativeLayout>

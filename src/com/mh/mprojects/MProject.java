@@ -49,5 +49,4 @@ public class MProject {
 		this.group = group;
 		this.created_date = 0;
 	}
-
 }

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="InflateParams">
+        <ignore path="src/com/mh/mprojects/DialogInput.java" />
+        <ignore path="src/com/mh/mprojects/DialogPickFile.java" />
+        <ignore path="src/com/mh/mprojects/DialogPickList.java" />
+    </issue>
     <issue id="NewApi">
-        <ignore path="src/com/mh/mprojects/ActivityMain.java" />
+        <ignore path="src/com/mh/mprojects/ActivityProject.java" />
+        <ignore path="src/com/mh/mprojects/ActivityProjects.java" />
         <ignore path="src/com/mh/mprojects/FragmentProjectPlan.java" />
         <ignore path="src/com/mh/mprojects/FragmentProjectTodolists.java" />
     </issue>

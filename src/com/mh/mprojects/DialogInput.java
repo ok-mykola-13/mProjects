@@ -27,12 +27,13 @@ public class DialogInput extends DialogFragment{
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState){
 		
-		//initialize Views
+		//get needed information from intent
 		String title = getArguments().getString("title");
 		final int activity = getArguments().getInt("activity");
 		String edtText = getArguments().getString("edtText");
 		final int id = getArguments().getInt("id");
 		
+		//custom font
 		Typeface tf = Typeface.createFromAsset(getActivity().getAssets(),
                 "fonts/comic.ttf");
 		
@@ -54,18 +55,17 @@ public class DialogInput extends DialogFragment{
 				if (text.equals("")) return;
 				
 				switch(activity){
-				//add Todo list
 				case 0:
-					((ActivityProject)getActivity()).addListToPlan(text);
+					((ActivityProject)getActivity()).fragmentPlan.addListToPlan(text);
 					break;
 				case 1:
-					((ActivityProject)getActivity()).addItemToList(text, id);
+					((ActivityProject)getActivity()).fragmentLists.addItemToList(text, id);
 					break;
 				case 2:
-					((ActivityProject)getActivity()).renameList(text, id);
+					((ActivityProject)getActivity()).fragmentPlan.renameList(text, id);
 					break;
 				case 3:
-					((ActivityProject)getActivity()).renameItem(text, id);
+					((ActivityProject)getActivity()).fragmentLists.renameItem(text, id);
 					break;
 				default: break;
 				}

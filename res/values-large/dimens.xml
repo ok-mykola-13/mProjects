@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>    
+    
+    <!-- item_gv_projects -->
+    <dimen name="p_project_icon_bg">5dp</dimen>
+    <dimen name="w_project_icon">120dp</dimen>
+    <dimen name="h_project_icon">120dp</dimen>
+    <dimen name="p_project_icon">12dp</dimen>
+    
+    <dimen name="mt_project_title">18dp</dimen>
+    <dimen name="ml_project_title">15dp</dimen>
+    <dimen name="t_project_title">22sp</dimen>
+    
+    <dimen name="mt_project_date">50dp</dimen>
+    <dimen name="ml_project_date">15dp</dimen>
+    <dimen name="t_project_date">18sp</dimen>
+    
+    <dimen name="mt_project_edt_name">8dp</dimen>
+    <dimen name="ml_project_edt_name">10dp</dimen>
+    <dimen name="mr_project_edt_name">25dp</dimen>
+    <dimen name="t_project_edt_name">22sp</dimen>
+    
+    <dimen name="pb_project_rl_button">10dp</dimen>
+    
+    <dimen name="p_project_button_edt">1dp</dimen>
+    <dimen name="mr_project_button_edt_cancel">5dp</dimen>
+    <dimen name="mr_project_button_edt_save">10dp</dimen>
+    
+	<!-- fragment_plan -->
+	<dimen name="pt_f_plan">7dp</dimen>
+	
+	<dimen name="t_f_plan_no">20sp</dimen>
+	
+	<dimen name="ml_f_plan_title">30dp</dimen>
+	<dimen name="mb_f_plan_title">7dp</dimen>
+	<dimen name="t_f_plan_title">30sp</dimen>
+	
+	<dimen name="h_f_plan_edit">35dp</dimen>
+	<dimen name="mr_f_plan_edit">20dp</dimen>
+	<dimen name="mt_f_plan_edit">5dp</dimen>
+	
+	<dimen name="h_f_plan_line">2dp</dimen>
+	
+	<dimen name="pt_f_plan_lv">7dp</dimen>
+	
+	<!-- item_lv_plan -->
+	<dimen name="pl_item_plan_ll">5dp</dimen>
+	<dimen name="pr_item_plan_ll">10dp</dimen>
+	<dimen name="pb_item_plan_ll">5dp</dimen>
+	
+	<dimen name="mr_item_plan_num">5dp</dimen>
+	<dimen name="mt_item_plan_num">10dp</dimen>
+	<dimen name="t_item_plan">22sp</dimen>
+	
+	<dimen name="mr_item_plan_chb">5dp</dimen>
+	
+	<dimen name="mt_item_plan_name">10dp</dimen>
+	
+	<dimen name="w_item_plan_menu">15dp</dimen>
+	<dimen name="mr_item_plan_menu">5dp</dimen>
+	
+	<!-- fragment_todolists -->
+	<dimen name="ml_f_lists_title">5dp</dimen>
+	<dimen name="mt_f_lists_title">12dp</dimen>
+	<dimen name="t_f_lists_title">20sp</dimen>
+	
+	<dimen name="w_f_lists_sort_spinner">110dp</dimen>
+	<dimen name="m_f_lists_sort_spinner">5dp</dimen>
+	<dimen name="p_f_lists_sort_spinner">7dp</dimen>
+	
+	<dimen name="p_f_lists_ll_add">3dp</dimen>
+	<dimen name="mt_f_lists_ll_add">15dp</dimen>
+	<dimen name="mr_f_lists_ll_add">7dp</dimen>
+	<dimen name="ml_f_lists_ll_add">15dp</dimen>
+	<dimen name="mb_f_lists_ll_add">3dp</dimen>
+	
+	<dimen name="mr_f_lists_img_add">5dp</dimen>
+	<dimen name="mt_f_lists_txt_add">0dp</dimen>
+	<dimen name="t_f_lists_txt_add">18sp</dimen>
+	
+	<dimen name="h_f_lists_line">2dp</dimen>
+	
+	<dimen name="mt_f_lists_lv">25dp</dimen>
+	
+	<!-- item_lv_lists -->
+	<dimen name="pl_item_lists_main">7dp</dimen>
+	<dimen name="pr_item_lists_main">7dp</dimen>
+	
+	<dimen name="mr_item_lists_chb">5dp</dimen>
+	<dimen name="mt_item_lists_chb">3dp</dimen>
+	
+	<dimen name="w_item_lists_menu">15dp</dimen>
+	
+	<dimen name="w_item_lists_spinner">130dp</dimen>
+	<dimen name="pt_item_lists_spinner">5dp</dimen>
+	<dimen name="pb_item_lists_spinner">5dp</dimen>
+	<dimen name="mr_item_lists_spinner">15dp</dimen>
+	
+	<dimen name="mt_item_lists_name">3dp</dimen>
+	<dimen name="t_item_lists_name">20sp</dimen>
+	
+</resources>

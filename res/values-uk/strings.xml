@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">mProjects</string>
+    
+<!--************************************************************************************-->
+
+	<!-- DialogInput -->
+    <!-- xml -->
+    <string name="enter_here">Писати тут..</string>
+    
+<!--************************************************************************************-->
+
+    <!-- DialogPickFile -->
+    <!-- java -->
+    <string name="this_is_root">Це коренева папка!</string>
+    <string name="can_not_write_on_sd">Не можу записувати на SD-карту: </string>
+    <!-- xml -->
+    <string name="back">Назад</string>
+    
+<!--************************************************************************************-->    
+    
+    <!-- FragmentProjectPlan -->
+    <!-- java -->
+   	<string name="enter_name_of_new_list">Нова назва списку: </string>
+   	<string name="rename_list">Переіменувати список </string>
+    <!-- xml -->
+    <string name="plan_title">План: </string>
+    <string name="project_icon">Іконка проекту</string>
+    <string name="plan_no">Ще нема плану?</string>
+    
+    <!-- ** menu **************** -->
+    <string name="m_delete">Видалити</string>
+    <string name="m_rename">Переіменувати</string>
+    <string name="m_move_up">Вверх</string>
+    <string name="m_move_down">Вниз</string>
+    
+<!--************************************************************************************-->  
+
+	<!-- FragmentProjects -->
+    <!-- java -->
+    <string name="sorry_cant_copy_icon">Вибач, не можу скопіювати зображення</string>
+    <string name="project_is_not_empty">Проект не порожній!</string>
+    <string name="change_image">Змінити іконку: </string>
+    <string name="add_image">Додати іконку: </string>
+    <!-- xml -->
+
+<!--************************************************************************************-->
+
+	<!-- FragmentProjectTodolists -->
+    <!-- java -->
+    <string name="by_name">назвою</string>
+    <string name="by_priority">пріорітетом</string>
+    <string name="by_done">виконанням</string>
+    <string name="enter_name_of_new_item">Введи ім\'я дії: </string>
+    <string name="rename_item">Переіменувати </string>
+    <string name="pick_new_list">Вибери новий список: </string>
+    <!-- xml -->
+    <string name="sort_by">Сортувати за: </string>
+    <string name="add_item">додати дію</string>
+    
+    <!--** menu **************** -->
+    <!-- uses m_delete -->
+    <!-- uses m_rename -->
+    <string name="m_move_to_list">Переміст. до списку..</string>
+
+<!--************************************************************************************-->
+
+	<!-- item_gv_projects -->    
+    <!-- xml -->
+    <!-- use project_icon -->
+	<string name="project">Проект</string>
+	<string name="date_num">31/12/2014</string>
+	<string name="add">Додати</string>
+    <string name="save">Збер.</string>
+    <string name="delete">Видал.</string>
+	
+<!--************************************************************************************-->  
+
+	<!-- item_lv_lists -->    
+    <!-- xml -->  
+    <string name="menu">меню</string>
+    <string name="list">Список</string>
+    
+<!--************************************************************************************-->
+
+	<!-- item_lv_lists -->    
+    <!-- xml --> 
+    <string name="order_num">1.</string>
+    <!-- use list -->
+    <!-- use menu -->
+    
+<!--************************************************************************************-->    
+
+</resources>

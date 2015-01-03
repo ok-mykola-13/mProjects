@@ -2,28 +2,94 @@
 <resources>
 
     <string name="app_name">mProjects</string>
-
-    <!-- Main Activity -->
-    <string name="projects">Projects</string>
-    <string name="project">Project</string>
-    <string name="todo_lists">Todo-lists</string>
-    <string name="main_bg">Main background</string>
-
-    <!-- menu -->
-    <string name="about">About</string>
-    <string name="need_help">Need help?</string>
-    <string name="title_activity_activity_projects">Projects</string>
-
-    <!-- Content descriptions -->
-    <string name="cd_project">Project</string>
-    <string name="cd_change">Change</string>
-    <string name="cd_delete">Delete</string>
     
-    <!-- ProjectActivity -->
-    <!-- plan fragment -->
+<!--************************************************************************************-->
+
+	<!-- DialogInput -->
+    <!-- xml -->
+    <string name="enter_here">Enter here..</string>
+    
+<!--************************************************************************************-->
+
+    <!-- DialogPickFile -->
+    <!-- java -->
+    <string name="this_is_root">This is root folder!</string>
+    <string name="can_not_write_on_sd">Can not write to SD-Card: </string>
+    <!-- xml -->
+    <string name="back">Back</string>
+    
+<!--************************************************************************************-->    
+    
+    <!-- FragmentProjectPlan -->
+    <!-- java -->
+   	<string name="enter_name_of_new_list">Enter name of new list: </string>
+   	<string name="rename_list">Rename list </string>
+    <!-- xml -->
     <string name="plan_title">Plan: </string>
+    <string name="project_icon">Project\'s icon</string>
+    <string name="plan_no">No plan yet?</string>
     
-    <!-- todolists fragment -->
-    <string name="todolists_title">To-do lists: </string>
+    <!-- ** menu **************** -->
+    <string name="m_delete">Delete</string>
+    <string name="m_rename">Rename</string>
+    <string name="m_move_up">Move Up</string>
+    <string name="m_move_down">Move Down</string>
+    
+<!--************************************************************************************-->  
+
+	<!-- FragmentProjects -->
+    <!-- java -->
+    <string name="sorry_cant_copy_icon">Sorry, can not copy image</string>
+    <string name="project_is_not_empty">Project is not empty!</string>
+    <string name="change_image">Change image: </string>
+    <string name="add_image">Add image: </string>
+    <!-- xml -->
+
+<!--************************************************************************************-->
+
+	<!-- FragmentProjectTodolists -->
+    <!-- java -->
+    <string name="by_name">name</string>
+    <string name="by_priority">priority</string>
+    <string name="by_done">done</string>
+    <string name="enter_name_of_new_item">Enter name of item: </string>
+    <string name="rename_item">Rename item </string>
+    <string name="pick_new_list">Pick new List: </string>
+    <!-- xml -->
+    <string name="sort_by">Sort by: </string>
+    <string name="add_item">add item</string>
+    
+    <!--** menu **************** -->
+    <!-- uses m_delete -->
+    <!-- uses m_rename -->
+    <string name="m_move_to_list">Move to list..</string>
+
+<!--************************************************************************************-->
+
+	<!-- item_gv_projects -->    
+    <!-- xml -->
+    <!-- use project_icon -->
+	<string name="project">Project</string>
+	<string name="date_num">31/12/2014</string>
+	<string name="add">Add</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+	
+<!--************************************************************************************-->  
+
+	<!-- item_lv_lists -->    
+    <!-- xml -->  
+    <string name="menu">menu</string>
+    <string name="list">List</string>
+    
+<!--************************************************************************************-->
+
+	<!-- item_lv_lists -->    
+    <!-- xml --> 
+    <string name="order_num">1.</string>
+    <!-- use list -->
+    <!-- use menu -->
+    
+<!--************************************************************************************-->    
 
 </resources>

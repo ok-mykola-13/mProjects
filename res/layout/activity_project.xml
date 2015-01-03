@@ -4,25 +4,20 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:baselineAligned="false"
-    android:background="@drawable/main_bg2" >
+    android:background="@drawable/main" >
 
-    <RelativeLayout 
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.3">
-	    <fragment
-	        android:name="com.mh.mprojects.FragmentProjectPlan"
-	        android:id="@+id/f_project_plan"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"/>
-	    <ImageView 
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:layout_alignParentRight="true"
-	        android:src="@drawable/right_border"
-	        android:scaleType="fitXY" />
-    
-    </RelativeLayout>  
+	<fragment
+	    android:name="com.mh.mprojects.FragmentProjectPlan"
+	    android:id="@+id/f_project_plan"
+	    android:layout_width="0dp"
+	    android:layout_height="match_parent"
+	    android:layout_weight="0.3" />
+	<ImageView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="match_parent"
+	    android:layout_alignParentRight="true"
+	    android:src="@drawable/right_border"
+	    android:scaleType="fitXY" />
     
     <fragment 
         android:id="@+id/f_project_lists"

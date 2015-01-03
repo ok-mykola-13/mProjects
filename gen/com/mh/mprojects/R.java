@@ -17,14 +17,8 @@ public final class R {
         public static final int abc_slide_out_top=0x7f040005;
     }
     public static final class animator {
-        public static final int slide_bottom_in=0x7f050000;
-        public static final int slide_bottom_out=0x7f050001;
-        public static final int slide_left_in=0x7f050002;
-        public static final int slide_left_out=0x7f050003;
-        public static final int slide_right_in=0x7f050004;
-        public static final int slide_right_out=0x7f050005;
-        public static final int slide_top_in=0x7f050006;
-        public static final int slide_top_out=0x7f050007;
+        public static final int slide_top_in=0x7f050000;
+        public static final int slide_top_out=0x7f050001;
     }
     public static final class attr {
         /**  Custom divider drawable to use for elements in the action bar. 
@@ -1267,15 +1261,6 @@ containing a value of this type.
  Minimum width of the search view text entry area. 
          */
         public static final int abc_search_view_text_min_width=0x7f0a000c;
-        /**  Default screen margins, per the Android Design guidelines. 
-
-         Example customization of dimensions originally defined in res/values/dimens.xml
-         (such as screen margins) for screens with more than 820dp of available width. This
-         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
-    
-         */
-        public static final int activity_horizontal_margin=0x7f0a0022;
-        public static final int activity_vertical_margin=0x7f0a0023;
         public static final int default_circle_indicator_radius=0x7f0a0015;
         public static final int default_circle_indicator_stroke_width=0x7f0a0016;
         public static final int default_line_indicator_gap_width=0x7f0a0018;
@@ -1321,12 +1306,101 @@ containing a value of this type.
          (the screen is in portrait). This may be either a fraction or a dimension.
          */
         public static final int dialog_fixed_width_minor=0x7f0a0012;
-        /**  Activity project 
+        public static final int h_f_lists_line=0x7f0a0056;
+        public static final int h_f_plan_edit=0x7f0a0039;
+        public static final int h_f_plan_line=0x7f0a003c;
+        public static final int h_project_icon=0x7f0a0024;
+        public static final int m_f_lists_sort_spinner=0x7f0a004c;
+        public static final int mb_f_lists_ll_add=0x7f0a0052;
+        public static final int mb_f_plan_title=0x7f0a0037;
+        public static final int ml_f_lists_ll_add=0x7f0a0051;
+        /**  fragment_todolists 
+ fragment_todolists 
+ fragment_todolists 
+ fragment_todolists 
+ fragment_todolists 
          */
-        public static final int fragment_title_font=0x7f0a0025;
-        /**  Main Activity 
+        public static final int ml_f_lists_title=0x7f0a0048;
+        public static final int ml_f_plan_title=0x7f0a0036;
+        public static final int ml_project_date=0x7f0a002a;
+        public static final int ml_project_edt_name=0x7f0a002d;
+        public static final int ml_project_title=0x7f0a0027;
+        public static final int mr_f_lists_img_add=0x7f0a0053;
+        public static final int mr_f_lists_ll_add=0x7f0a0050;
+        public static final int mr_f_plan_edit=0x7f0a003a;
+        public static final int mr_item_lists_chb=0x7f0a005a;
+        public static final int mr_item_lists_spinner=0x7f0a005f;
+        public static final int mr_item_plan_chb=0x7f0a0044;
+        public static final int mr_item_plan_menu=0x7f0a0047;
+        public static final int mr_item_plan_num=0x7f0a0041;
+        public static final int mr_project_button_edt_cancel=0x7f0a0032;
+        public static final int mr_project_button_edt_save=0x7f0a0033;
+        public static final int mr_project_edt_name=0x7f0a002e;
+        public static final int mt_f_lists_ll_add=0x7f0a004f;
+        public static final int mt_f_lists_lv=0x7f0a0057;
+        public static final int mt_f_lists_title=0x7f0a0049;
+        public static final int mt_f_lists_txt_add=0x7f0a0054;
+        public static final int mt_f_plan_edit=0x7f0a003b;
+        public static final int mt_item_lists_chb=0x7f0a005b;
+        public static final int mt_item_lists_name=0x7f0a0060;
+        public static final int mt_item_plan_name=0x7f0a0045;
+        public static final int mt_item_plan_num=0x7f0a0042;
+        public static final int mt_project_date=0x7f0a0029;
+        public static final int mt_project_edt_name=0x7f0a002c;
+        public static final int mt_project_title=0x7f0a0026;
+        public static final int p_f_lists_ll_add=0x7f0a004e;
+        public static final int p_f_lists_sort_spinner=0x7f0a004d;
+        public static final int p_project_button_edt=0x7f0a0031;
+        public static final int p_project_icon=0x7f0a0025;
+        /**  item_gv_projects 
+ item_gv_projects 
+ item_gv_projects 
+ item_gv_projects 
+ item_gv_projects 
          */
-        public static final int main_btns_padding=0x7f0a0024;
+        public static final int p_project_icon_bg=0x7f0a0022;
+        public static final int pb_item_lists_spinner=0x7f0a005e;
+        public static final int pb_item_plan_ll=0x7f0a0040;
+        public static final int pb_project_rl_button=0x7f0a0030;
+        /**  item_lv_lists 
+ item_lv_lists 
+ item_lv_lists 
+ item_lv_lists 
+ item_lv_lists 
+         */
+        public static final int pl_item_lists_main=0x7f0a0058;
+        /**  item_lv_plan 
+ item_lv_plan 
+ item_lv_plan 
+ item_lv_plan 
+ item_lv_plan 
+         */
+        public static final int pl_item_plan_ll=0x7f0a003e;
+        public static final int pr_item_lists_main=0x7f0a0059;
+        public static final int pr_item_plan_ll=0x7f0a003f;
+        /**  fragment_plan 
+ fragment_plan 
+ fragment_plan 
+ fragment_plan 
+ fragment_plan 
+         */
+        public static final int pt_f_plan=0x7f0a0034;
+        public static final int pt_f_plan_lv=0x7f0a003d;
+        public static final int pt_item_lists_spinner=0x7f0a005d;
+        public static final int t_f_lists_title=0x7f0a004a;
+        public static final int t_f_lists_txt_add=0x7f0a0055;
+        public static final int t_f_plan_no=0x7f0a0035;
+        public static final int t_f_plan_title=0x7f0a0038;
+        public static final int t_item_lists_name=0x7f0a0061;
+        public static final int t_item_plan=0x7f0a0043;
+        public static final int t_project_date=0x7f0a002b;
+        public static final int t_project_edt_name=0x7f0a002f;
+        public static final int t_project_title=0x7f0a0028;
+        public static final int w_f_lists_sort_spinner=0x7f0a004b;
+        public static final int w_item_lists_menu=0x7f0a005c;
+        public static final int w_item_lists_spinner=0x7f0a0062;
+        public static final int w_item_plan_menu=0x7f0a0046;
+        public static final int w_project_icon=0x7f0a0023;
     }
     public static final class drawable {
         public static final int abc_ab_bottom_solid_dark_holo=0x7f020000;
@@ -1416,48 +1490,41 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int add=0x7f020057;
-        public static final int bg_patt=0x7f020058;
-        public static final int bg_pattern=0x7f020059;
-        public static final int border=0x7f02005a;
-        public static final int border_blue=0x7f02005b;
-        public static final int border_green=0x7f02005c;
-        public static final int border_red=0x7f02005d;
-        public static final int btn_projects=0x7f02005e;
-        public static final int btn_todos=0x7f02005f;
-        public static final int chb_checked=0x7f020060;
-        public static final int chb_checked_small=0x7f020061;
-        public static final int chb_unchecked=0x7f020062;
-        public static final int chb_unchecked_press=0x7f020063;
-        public static final int chb_unchecked_press_small=0x7f020064;
-        public static final int chb_unchecked_small=0x7f020065;
-        public static final int dir=0x7f020066;
-        public static final int edit_plan=0x7f020067;
-        public static final int ic_launcher=0x7f020068;
-        public static final int icon_a=0x7f020069;
-        public static final int icon_help=0x7f02006a;
-        public static final int img=0x7f02006b;
-        public static final int main_bg=0x7f02006c;
-        public static final int main_bg1=0x7f02006d;
-        public static final int main_bg2=0x7f02006e;
-        public static final int menu=0x7f02006f;
-        public static final int menu_grey=0x7f020070;
-        public static final int piano=0x7f020071;
-        public static final int plus=0x7f020072;
-        public static final int project_bg=0x7f020073;
-        public static final int project_logo=0x7f020074;
-        public static final int project_logo_change=0x7f020075;
-        public static final int right_border=0x7f020076;
-        public static final int status_green=0x7f020077;
-        public static final int status_orange=0x7f020078;
-        public static final int status_red=0x7f020079;
-        public static final int vpi__tab_indicator=0x7f02007a;
-        public static final int vpi__tab_selected_focused_holo=0x7f02007b;
-        public static final int vpi__tab_selected_holo=0x7f02007c;
-        public static final int vpi__tab_selected_pressed_holo=0x7f02007d;
-        public static final int vpi__tab_unselected_focused_holo=0x7f02007e;
-        public static final int vpi__tab_unselected_holo=0x7f02007f;
-        public static final int vpi__tab_unselected_pressed_holo=0x7f020080;
+        public static final int action_bar=0x7f020057;
+        public static final int add_list=0x7f020058;
+        public static final int border=0x7f020059;
+        public static final int border_blue=0x7f02005a;
+        public static final int border_green=0x7f02005b;
+        public static final int border_red=0x7f02005c;
+        public static final int chb_checked=0x7f02005d;
+        public static final int chb_checked_small=0x7f02005e;
+        public static final int chb_unchecked=0x7f02005f;
+        public static final int chb_unchecked_press=0x7f020060;
+        public static final int chb_unchecked_press_small=0x7f020061;
+        public static final int chb_unchecked_small=0x7f020062;
+        public static final int default_project_logo=0x7f020063;
+        public static final int dir=0x7f020064;
+        public static final int img=0x7f020065;
+        public static final int logo=0x7f020066;
+        public static final int main=0x7f020067;
+        public static final int main_bg=0x7f020068;
+        public static final int menu=0x7f020069;
+        public static final int plus=0x7f02006a;
+        public static final int plus_big=0x7f02006b;
+        public static final int prior_green=0x7f02006c;
+        public static final int prior_orange=0x7f02006d;
+        public static final int prior_red=0x7f02006e;
+        public static final int project_bg=0x7f02006f;
+        public static final int project_logo_bg=0x7f020070;
+        public static final int project_logo_change=0x7f020071;
+        public static final int right_border=0x7f020072;
+        public static final int vpi__tab_indicator=0x7f020073;
+        public static final int vpi__tab_selected_focused_holo=0x7f020074;
+        public static final int vpi__tab_selected_holo=0x7f020075;
+        public static final int vpi__tab_selected_pressed_holo=0x7f020076;
+        public static final int vpi__tab_unselected_focused_holo=0x7f020077;
+        public static final int vpi__tab_unselected_holo=0x7f020078;
+        public static final int vpi__tab_unselected_pressed_holo=0x7f020079;
     }
     public static final class id {
         public static final int action_bar=0x7f070020;
@@ -1475,13 +1542,13 @@ containing a value of this type.
         public static final int always=0x7f07000b;
         public static final int beginning=0x7f070011;
         public static final int bottom=0x7f07001c;
-        public static final int btn_add_project=0x7f07005c;
-        public static final int btn_cancel_project=0x7f070060;
-        public static final int btn_change_project=0x7f07005f;
-        public static final int btn_delete_project=0x7f070061;
-        public static final int btn_projects=0x7f070049;
-        public static final int chb_plan_item=0x7f070069;
-        public static final int chb_project_list=0x7f070063;
+        public static final int btn_add_project=0x7f07005d;
+        public static final int btn_cancel_add_project=0x7f07005c;
+        public static final int btn_cancel_project=0x7f070062;
+        public static final int btn_change_project=0x7f070061;
+        public static final int btn_delete_project=0x7f070063;
+        public static final int chb_plan_item=0x7f07006a;
+        public static final int chb_project_list=0x7f070065;
         public static final int checkbox=0x7f070031;
         public static final int collapseActionView=0x7f07000d;
         public static final int default_activity_button=0x7f07002c;
@@ -1490,51 +1557,51 @@ containing a value of this type.
         public static final int dropdown=0x7f07000f;
         public static final int edit_query=0x7f070034;
         public static final int end=0x7f070013;
-        public static final int et_dialog_input=0x7f070045;
-        public static final int et_project_name=0x7f07005a;
+        public static final int et_dialog_input=0x7f070043;
+        public static final int et_project_add_name=0x7f07005b;
+        public static final int et_project_edt_name=0x7f070060;
         public static final int expand_activities_button=0x7f07002a;
         public static final int expanded_menu=0x7f070030;
-        public static final int f_main_splash=0x7f070044;
-        public static final int f_name=0x7f070055;
+        public static final int f_name=0x7f070053;
         public static final int f_project_lists=0x7f070041;
         public static final int f_project_plan=0x7f070040;
-        public static final int fpfd_btn_back=0x7f070046;
-        public static final int fpfd_lv=0x7f070047;
-        public static final int gv_projects=0x7f07004d;
+        public static final int f_projects=0x7f070042;
+        public static final int fpfd_btn_back=0x7f070044;
+        public static final int fpfd_lv=0x7f070045;
+        public static final int gv_projects=0x7f07004b;
         public static final int home=0x7f070014;
         public static final int homeAsUp=0x7f070005;
         public static final int icon=0x7f07002e;
         public static final int ifRoom=0x7f07000a;
         public static final int image=0x7f07002b;
-        public static final int imgFile=0x7f070054;
-        public static final int img_add_todolist=0x7f070051;
-        public static final int img_edit_plan=0x7f07004b;
-        public static final int img_project_list_menu=0x7f070064;
-        public static final int img_project_list_priority=0x7f070067;
-        public static final int img_project_logo=0x7f070058;
-        public static final int img_project_logo_change=0x7f07005e;
-        public static final int img_project_logo_patt=0x7f070057;
-        public static final int img_project_plan_task_menu=0x7f07006b;
-        public static final int iv_spinner_prior=0x7f07006c;
+        public static final int imgFile=0x7f070052;
+        public static final int img_add_todolist=0x7f07004f;
+        public static final int img_edit_plan=0x7f070048;
+        public static final int img_project_list_menu=0x7f070066;
+        public static final int img_project_logo=0x7f070056;
+        public static final int img_project_logo_add=0x7f07005a;
+        public static final int img_project_logo_change=0x7f07005f;
+        public static final int img_project_logo_patt=0x7f070055;
+        public static final int img_project_plan_task_menu=0x7f07006c;
+        public static final int iv_spinner_prior=0x7f07006d;
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f07002d;
-        public static final int ll_add_todolist=0x7f070050;
-        public static final int lv_pick_list=0x7f070048;
-        public static final int lv_plan=0x7f07004c;
-        public static final int lv_todolists=0x7f070053;
+        public static final int ll_add_todolist=0x7f07004e;
+        public static final int lv_pick_list=0x7f070046;
+        public static final int lv_plan=0x7f070049;
+        public static final int lv_todolists=0x7f070051;
         public static final int middle=0x7f070012;
         public static final int never=0x7f070009;
         public static final int none=0x7f070010;
         public static final int normal=0x7f070000;
-        public static final int pager=0x7f070042;
-        public static final int pager_title_strip=0x7f070043;
         public static final int progress_circular=0x7f070018;
         public static final int progress_horizontal=0x7f070019;
         public static final int radio=0x7f070033;
-        public static final int rl_project=0x7f070056;
-        public static final int rl_project_edit=0x7f07005d;
-        public static final int s_list_prior=0x7f070065;
-        public static final int s_lists_sort=0x7f07004f;
+        public static final int rl_project=0x7f070054;
+        public static final int rl_project_add=0x7f070059;
+        public static final int rl_project_edit=0x7f07005e;
+        public static final int s_list_prior=0x7f070067;
+        public static final int s_lists_sort=0x7f07004d;
         public static final int search_badge=0x7f070036;
         public static final int search_bar=0x7f070035;
         public static final int search_button=0x7f070037;
@@ -1556,15 +1623,16 @@ containing a value of this type.
         public static final int top=0x7f07001d;
         public static final int top_action_bar=0x7f070024;
         public static final int triangle=0x7f07001a;
-        public static final int tv_add_todolist=0x7f070052;
-        public static final int tv_f_todos_sort=0x7f07004e;
-        public static final int tv_plan_title=0x7f07004a;
-        public static final int tv_project_list_name=0x7f070066;
-        public static final int tv_project_plan_task_name=0x7f07006a;
-        public static final int tv_project_plan_task_num=0x7f070068;
-        public static final int tv_spinner=0x7f070062;
-        public static final int txt_project_date=0x7f07005b;
-        public static final int txt_project_name=0x7f070059;
+        public static final int tv_add_todolist=0x7f070050;
+        public static final int tv_f_plan_no=0x7f07004a;
+        public static final int tv_f_todos_sort=0x7f07004c;
+        public static final int tv_plan_title=0x7f070047;
+        public static final int tv_project_list_name=0x7f070068;
+        public static final int tv_project_plan_task_name=0x7f07006b;
+        public static final int tv_project_plan_task_num=0x7f070069;
+        public static final int tv_spinner=0x7f070064;
+        public static final int txt_project_date=0x7f070058;
+        public static final int txt_project_name=0x7f070057;
         public static final int underline=0x7f07001b;
         public static final int up=0x7f070025;
         public static final int useLogo=0x7f070003;
@@ -1630,19 +1698,17 @@ containing a value of this type.
         public static final int dialog_input=0x7f03001a;
         public static final int dialog_pick_file=0x7f03001b;
         public static final int dialog_pick_list=0x7f03001c;
-        public static final int fragment_main=0x7f03001d;
-        public static final int fragment_project_note=0x7f03001e;
-        public static final int fragment_project_plan=0x7f03001f;
-        public static final int fragment_projects_page=0x7f030020;
-        public static final int fragment_todolists=0x7f030021;
-        public static final int item_file=0x7f030022;
-        public static final int item_gv_projects=0x7f030023;
-        public static final int item_lv_dialog=0x7f030024;
-        public static final int item_lv_lists=0x7f030025;
-        public static final int item_lv_plan=0x7f030026;
-        public static final int item_spinner=0x7f030027;
-        public static final int item_spinner_prior=0x7f030028;
-        public static final int support_simple_spinner_dropdown_item=0x7f030029;
+        public static final int fragment_project_plan=0x7f03001d;
+        public static final int fragment_projects=0x7f03001e;
+        public static final int fragment_todolists=0x7f03001f;
+        public static final int item_file=0x7f030020;
+        public static final int item_gv_projects=0x7f030021;
+        public static final int item_lv_dialog=0x7f030022;
+        public static final int item_lv_lists=0x7f030023;
+        public static final int item_lv_plan=0x7f030024;
+        public static final int item_spinner=0x7f030025;
+        public static final int item_spinner_prior=0x7f030026;
+        public static final int support_simple_spinner_dropdown_item=0x7f030027;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1685,30 +1751,120 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0c000b;
-        /**  menu 
-         */
-        public static final int about=0x7f0c0012;
+        public static final int add=0x7f0c002a;
+        public static final int add_image=0x7f0c001e;
+        public static final int add_item=0x7f0c0026;
         public static final int app_name=0x7f0c000d;
-        public static final int cd_change=0x7f0c0016;
-        public static final int cd_delete=0x7f0c0017;
-        /**  Content descriptions 
+        /**  xml 
+ xml 
          */
-        public static final int cd_project=0x7f0c0015;
-        public static final int main_bg=0x7f0c0011;
-        public static final int need_help=0x7f0c0013;
-        /**  ProjectActivity 
- plan fragment 
+        public static final int back=0x7f0c0011;
+        public static final int by_done=0x7f0c0021;
+        /**  xml 
+************************************************************************************
+ FragmentProjectTodolists 
+ java 
+ xml 
+************************************************************************************
+ FragmentProjectTodolists 
+ java 
          */
-        public static final int plan_title=0x7f0c0018;
-        public static final int project=0x7f0c000f;
-        /**  Main Activity 
+        public static final int by_name=0x7f0c001f;
+        public static final int by_priority=0x7f0c0020;
+        public static final int can_not_write_on_sd=0x7f0c0010;
+        public static final int change_image=0x7f0c001d;
+        public static final int date_num=0x7f0c0029;
+        public static final int delete=0x7f0c002c;
+        /** ************************************************************************************
+ DialogInput 
+ xml 
+************************************************************************************
+ DialogInput 
+ xml 
          */
-        public static final int projects=0x7f0c000e;
-        public static final int title_activity_activity_projects=0x7f0c0014;
-        public static final int todo_lists=0x7f0c0010;
-        /**  todolists fragment 
+        public static final int enter_here=0x7f0c000e;
+        public static final int enter_name_of_new_item=0x7f0c0022;
+        /** ************************************************************************************
+ FragmentProjectPlan 
+ java 
+************************************************************************************
+ FragmentProjectPlan 
+ java 
          */
-        public static final int todolists_title=0x7f0c0019;
+        public static final int enter_name_of_new_list=0x7f0c0012;
+        public static final int list=0x7f0c002e;
+        /**  ** menu **************** 
+ ** menu **************** 
+         */
+        public static final int m_delete=0x7f0c0017;
+        public static final int m_move_down=0x7f0c001a;
+        /** ** menu **************** 
+ uses m_delete 
+ uses m_rename 
+** menu **************** 
+ uses m_delete 
+ uses m_rename 
+         */
+        public static final int m_move_to_list=0x7f0c0027;
+        public static final int m_move_up=0x7f0c0019;
+        public static final int m_rename=0x7f0c0018;
+        /** ************************************************************************************
+ item_lv_lists 
+ xml 
+************************************************************************************
+ item_lv_lists 
+ xml 
+         */
+        public static final int menu=0x7f0c002d;
+        /** ************************************************************************************
+ item_lv_lists 
+ xml 
+************************************************************************************
+ item_lv_lists 
+ xml 
+         */
+        public static final int order_num=0x7f0c002f;
+        public static final int pick_new_list=0x7f0c0024;
+        public static final int plan_no=0x7f0c0016;
+        /**  xml 
+ xml 
+         */
+        public static final int plan_title=0x7f0c0014;
+        /** ************************************************************************************
+ item_gv_projects 
+ xml 
+ use project_icon 
+************************************************************************************
+ item_gv_projects 
+ xml 
+ use project_icon 
+         */
+        public static final int project=0x7f0c0028;
+        public static final int project_icon=0x7f0c0015;
+        public static final int project_is_not_empty=0x7f0c001c;
+        public static final int rename_item=0x7f0c0023;
+        public static final int rename_list=0x7f0c0013;
+        public static final int save=0x7f0c002b;
+        /** ************************************************************************************
+ FragmentProjects 
+ java 
+************************************************************************************
+ FragmentProjects 
+ java 
+         */
+        public static final int sorry_cant_copy_icon=0x7f0c001b;
+        /**  xml 
+ xml 
+         */
+        public static final int sort_by=0x7f0c0025;
+        /** ************************************************************************************
+ DialogPickFile 
+ java 
+************************************************************************************
+ DialogPickFile 
+ java 
+         */
+        public static final int this_is_root=0x7f0c000f;
     }
     public static final class style {
         /** 
@@ -1720,17 +1876,6 @@ containing a value of this type.
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f0d0090;
         /**  Application theme. 

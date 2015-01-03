@@ -2,25 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ccffffff" >
+    android:background="#ffffff" >
      
     <TextView
         android:id="@+id/tv_f_todos_sort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="25dp"
-        android:text="Sort by: "
-        android:textSize="20sp" />
+        android:layout_marginLeft="@dimen/ml_f_lists_title"
+        android:layout_marginTop="@dimen/mt_f_lists_title"
+        android:text="@string/sort_by"
+        android:textSize="@dimen/t_f_lists_title" />
     <Spinner
         android:id="@+id/s_lists_sort"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/w_f_lists_sort_spinner"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_toRightOf="@+id/tv_f_todos_sort"
-        android:layout_margin="10dp"
-        android:padding="15dp" />
+        android:layout_margin="@dimen/m_f_lists_sort_spinner"
+        android:padding="@dimen/p_f_lists_sort_spinner" />
     
     <LinearLayout
         android:id="@+id/ll_add_todolist"
@@ -28,33 +28,41 @@
 	    android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
 	    android:layout_alignParentTop="true"
-	    android:padding="5dp"
-	    android:layout_marginTop="30dp"
-	    android:layout_marginRight="15dp"
-	    android:layout_marginLeft="30dp"
+	    android:padding="@dimen/p_f_lists_ll_add"
+	    android:layout_marginTop="@dimen/mt_f_lists_ll_add"
+	    android:layout_marginRight="@dimen/mr_f_lists_ll_add"
+	    android:layout_marginLeft="@dimen/ml_f_lists_ll_add"
+	    android:layout_marginBottom="@dimen/mb_f_lists_ll_add"
         android:orientation="horizontal"
         android:background="@drawable/border">
 	    <ImageView
 	        android:id="@+id/img_add_todolist"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_marginRight="10dp"
-	        android:src="@drawable/plus" />
+	        android:layout_marginRight="@dimen/mr_f_lists_img_add"
+	        android:src="@drawable/plus"
+	        android:contentDescription="@string/add_item" />
 	    <TextView
 	        android:id="@+id/tv_add_todolist"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_marginTop="2dp"
-	        android:text="add item"
-	        android:textSize="20sp" />
+	        android:layout_marginTop="@dimen/mt_f_lists_txt_add"
+	        android:text="@string/add_item"
+	        android:textSize="@dimen/t_f_lists_txt_add" />
     </LinearLayout>
+    
+    <View
+        android:layout_below="@+id/ll_add_todolist"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h_f_lists_line"
+        android:background="#91bef1" />
     
     <ListView
         android:id="@+id/lv_todolists"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ll_add_todolist"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="@dimen/mt_f_lists_lv" />
     
 
 </RelativeLayout>

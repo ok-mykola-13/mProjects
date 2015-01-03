@@ -2,41 +2,49 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    android:paddingTop="15dp" >
+    android:background="#ccffffff"
+    android:paddingTop="@dimen/pt_f_plan" >
     
     <TextView
         android:id="@+id/tv_plan_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="60dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="@dimen/ml_f_plan_title"
+        android:layout_marginBottom="@dimen/mb_f_plan_title"
         android:text="@string/plan_title"
-        android:textSize="@dimen/fragment_title_font" />
+        android:textSize="@dimen/t_f_plan_title" />
     <ImageView
         android:id="@+id/img_edit_plan"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/h_f_plan_edit"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/add"
-        android:scaleType="fitCenter" />   
+        android:layout_marginRight="@dimen/mr_f_plan_edit"
+        android:layout_marginTop="@dimen/mt_f_plan_edit"
+        android:src="@drawable/add_list"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/project_icon" />   
         
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/h_f_plan_line"
         android:layout_above="@+id/lv_plan"
-        android:background="#ccc" />
+        android:background="#91bef1" />
     
+    <TextView
+        android:id="@+id/tv_f_plan_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/plan_no"
+        android:textSize="@dimen/t_f_plan_no"
+        android:textColor="#999" />
     <ListView
         android:id="@+id/lv_plan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tv_plan_title"
-        android:paddingTop="15dp"
-    	android:background="@drawable/bg_pattern" />
+        android:paddingTop="@dimen/pt_f_plan_lv" />
 
 </RelativeLayout>

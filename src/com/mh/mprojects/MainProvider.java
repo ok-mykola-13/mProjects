@@ -189,6 +189,11 @@ public class MainProvider extends ContentProvider{
 					selection, selectionArgs);
 			break;
 			
+		case TASKS:
+			deleteCount = db.delete(DBHelper.DB_TABLE_TASKS,
+					selection, selectionArgs);
+			break;
+			
 		default:
 			break;
 		}		

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
-import android.util.Log;
 
 public class DBHelper extends SQLiteOpenHelper{
 	
@@ -57,12 +56,10 @@ public class DBHelper extends SQLiteOpenHelper{
 		db.execSQL(DB_CREATE_PROJECTS);
 		db.execSQL(DB_CREATE_LISTS);
 		db.execSQL(DB_CREATE_TASKS);
-		Log.w("DataBase","Creating");
 	}
 	
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-		/*Log.w("OrganizerDB", "Upgrading from " + 
-						oldVersion + " to " + newVersion);*/
+		// no need to use yet
 	}
 }

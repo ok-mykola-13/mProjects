@@ -50,7 +50,4 @@ public class MTask {
 		this.parent = parent;
 		this.prior = prior;
 	}
-	
-	
-
 }

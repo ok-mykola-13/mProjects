@@ -36,7 +36,8 @@ public class DialogPickFile extends DialogFragment{
 	private String currentPath = Environment.getExternalStorageDirectory().toString();
 	private File mPath;
 	private int activity;
-	
+
+	//Where to set image
 	ImageView iv;
 	
 	private static final String FTYPE_JPG = ".jpg";
@@ -97,9 +98,7 @@ public class DialogPickFile extends DialogFragment{
 					}					
 					dismiss();
 				}
-								
 			}
-			
 		});
 		
 		//Button back
@@ -110,7 +109,7 @@ public class DialogPickFile extends DialogFragment{
 				String root = Environment.getExternalStorageDirectory().toString();
 				if (currentPath.equals(root)){
 					Toast.makeText(getActivity(), 
-							"This is root folder",//getResources().getString(R.string.this_is_root), 
+							getResources().getString(R.string.this_is_root), 
 							Toast.LENGTH_SHORT).show();
 				}else{
 					File f = new File(currentPath);
@@ -137,7 +136,6 @@ public class DialogPickFile extends DialogFragment{
 		
 		.create();
 		
-		
 		loadFileList();
 		
 		return dialog;
@@ -150,7 +148,7 @@ public class DialogPickFile extends DialogFragment{
 			mPath.mkdirs();
 		}catch(SecurityException e){
 			Toast.makeText(getActivity(), 
-					"Can not write to SD-Card: " + e.toString(), 
+					getResources().getString(R.string.can_not_write_on_sd) + e.toString(), 
 					Toast.LENGTH_SHORT).show();
 		}
 		
@@ -181,8 +179,10 @@ public class DialogPickFile extends DialogFragment{
 			filesList = new ArrayList<File>();
 		}
 	}
+/******************************************************************************************/
 	
-	//fileList adapter
+	/**ArrayAdapter for ListView of Files*/
+/******************************************************************************************/
 	private class FilesAdapter extends ArrayAdapter<File>{
 		private int resource;
 		
@@ -195,12 +195,12 @@ public class DialogPickFile extends DialogFragment{
 		
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent){
-			LinearLayout ll;
 			
+			//get Item and it's properties
 			File item = getItem(position);
-					
 			String name = item.getName();
-			
+			//get root view
+			LinearLayout ll;
 			if (convertView == null){
 				ll = new LinearLayout(getContext());
 				String inflater = Context.LAYOUT_INFLATER_SERVICE;
@@ -213,9 +213,11 @@ public class DialogPickFile extends DialogFragment{
 			
 			//setting Views
 			TextView nameView = (TextView)ll.findViewById(R.id.f_name);
+			ImageView img = (ImageView)ll.findViewById(R.id.imgFile);
+			
+			//set name
 			nameView.setText(name);
 			
-			ImageView img = (ImageView)ll.findViewById(R.id.imgFile);
 			//get type of file
 			int pos = name.lastIndexOf('.');
 			String ext = null;
@@ -237,4 +239,5 @@ public class DialogPickFile extends DialogFragment{
 			return ll;
 		}
 	}
+/******************************************************************************************/
 }

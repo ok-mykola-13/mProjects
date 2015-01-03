@@ -8,7 +8,7 @@
         android:id="@+id/fpfd_btn_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Back" />
+        android:text="@string/back" />
     <ListView 
         android:id="@+id/fpfd_lv"
         android:layout_width="match_parent"
